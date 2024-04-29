@@ -2,14 +2,33 @@ import java.util.Arrays;
 
 public class Main {
 
-    public static void main(String[] args) {
-        int [][] matrix = new int[3][3];
-        int x=0;
+    /**
+     * Знаходить число, яке повторюється найбільшу кількість разів у матриці.
+     *
+     * @param matrix двовимірний масив чисел
+     * @return число, яке повторюється найбільшу кількість разів
+     */
+    public static int findMostFrequentNumber(int[][] matrix) {
+        // Створюємо масив для зберігання частот кожного числа
+        int[] frequency = new int[100]; // Припускаємо, що числа у матриці не перевищують 100
 
-        for(int[] row:matrix)
-            Arrays.fill(row,x);
+        // Рахуємо частоту кожного числа у матриці
+        for (int[] row : matrix) {
+            for (int num : row) {
+                frequency[num]++;
+            }
+        }
 
-        for(int[] row:matrix)
-            System.out.println(Arrays.toString(row));
+        // Знаходимо число з найбільшою частотою
+        int mostFrequentNum = 0;
+        int maxFrequency = 0;
+        for (int i = 0; i < frequency.length; i++) {
+            if (frequency[i] > maxFrequency) {
+                mostFrequentNum = i;
+                maxFrequency = frequency[i];
+            }
+        }
+
+        return mostFrequentNum;
     }
 }
