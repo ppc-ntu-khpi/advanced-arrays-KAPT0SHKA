@@ -1,7 +1,4 @@
-import java.util.Arrays;
-
 public class Main {
-
     /**
      * Знаходить число, яке повторюється найбільшу кількість разів у матриці.
      *
@@ -28,7 +25,18 @@ public class Main {
                 maxFrequency = frequency[i];
             }
         }
-
         return mostFrequentNum;
+    }
+
+    public static void main(String[] args) {
+        // Приклад використання методу findMostFrequentNumber з тестовою матрицею
+        int[][] matrix = {
+            {1, 2, 3},
+            {3, 2, 1},
+            {1, 1, 2}
+        };
+
+        int mostFrequentNum = findMostFrequentNumber(matrix);
+        System.out.println("Число, яке повторюється найбільшу кількість разів: " + mostFrequentNum);
     }
 }

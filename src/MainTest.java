@@ -9,7 +9,7 @@ public class MainTest {
         };
 
         // Отримуємо результат від методу findMostFrequentNumber
-        int mostFrequentNum = MatrixAnalyzer.findMostFrequentNumber(matrix);
+        int mostFrequentNum = Main.findMostFrequentNumber(matrix);
 
         // Виводимо результат
         System.out.println("Число, яке повторюється найбільшу кількість разів: " + mostFrequentNum);
